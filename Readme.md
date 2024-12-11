@@ -7,6 +7,68 @@
 
 ![](https://github.com/AdaoG0n/AdaoG0n/blob/main/assests/bar.png)
 
+# Minitalk
+
+**Minitalk** is a project from **42 school** that explores fundamental concepts of interprocess communication (IPC) in Unix-based operating systems. </br>
+The goal is to implement a messaging system between two programs using signals (`SIGUSR1` and `SIGUSR2`). </br>
+This project provides a hands-on introduction to signal handling and process communication in a Linux environment. </br>
+
+## Project Objective
+
+Develop two programs:
+
+1. **Server**:
+   - Waits for messages sent by the client.
+   - Displays received messages in the terminal.
+
+2. **Client**:
+   - Sends a string to the server, character by character, encoding data using signals (`SIGUSR1` and `SIGUSR2`).
+
+## Key Concepts
+
+- **Signals**:
+  - Signals are a form of asynchronous communication between processes in Unix. Examples: `SIGUSR1` and `SIGUSR2`.
+- **Interprocess Communication (IPC)**:
+  - The exchange of information between two separate processes.
+- **Signal Handling**:
+  - Using functions like `signal()` or `sigaction()` to handle signals.
+
+## Features
+
+- Sending and receiving messages between client and server.
+- Accurate signal decoding to reconstruct the original message.
+- Error handling for issues such as lost signals or interruptions.
+
+## Technologies Used
+
+- **Language**: C
+- **Operating System**: Unix/Linux
+- **Advanced Concepts**: Signal handling, IPC.
+
+## How to Use
+
+1. Compile the programs:
+   ```
+   make
+   ```
+
+2. Run the server to get its PID:
+    ```
+   ./server
+    ```
+4. Run the client to send a message:
+    ```
+   ./client <server_PID> "Your message here"
+    ```
+## Project Requirements
+
+- Only functions authorized by **42** can be used.
+- The client must be able to send messages of any length.
+- The server must display the complete message, even if transmission is slow.
+
+
+![](https://github.com/AdaoG0n/AdaoG0n/blob/main/assests/bar.png)
+
 ### Testers
 | minitalk                                                         |
 | :--------------------------------------------------------------- |
