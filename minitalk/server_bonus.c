@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamarqu <adamarqu@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: adamarqu <adamarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:06:39 by adamarqu          #+#    #+#             */
-/*   Updated: 2024/12/11 11:06:58 by adamarqu         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:10:09 by adamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ int	main(void)
 {
 	struct sigaction	sa_sig;
 
-	ft_printf("PID: %d\n", getpid());
+	ft_printf("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n");
+	ft_printf("        \033[1;32mPID: \033[0m%d \n", getpid());
+	ft_printf("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n");
 	while (1)
 	{
 		sa_sig.sa_sigaction = &handler;

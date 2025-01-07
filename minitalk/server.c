@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamarqu <adamarqu@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: adamarqu <adamarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:53:38 by adamarqu          #+#    #+#             */
-/*   Updated: 2024/12/11 10:54:00 by adamarqu         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:06:47 by adamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ void	handler(int sig)
 
 int	main(void)
 {
-	ft_printf("PID: %d\n", getpid());
+	ft_printf("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n");
+	ft_printf("        \033[1;32mPID: \033[0m%d \n", getpid());
+	ft_printf("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n");
 	while (1)
 	{
 		signal(SIGUSR1, handler);

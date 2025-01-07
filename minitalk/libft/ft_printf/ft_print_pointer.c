@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamarqu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: adamarqu <adamarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:25:37 by adamarqu          #+#    #+#             */
-/*   Updated: 2024/11/04 13:28:31 by adamarqu         ###   ########.fr       */
+/*   Updated: 2025/01/07 12:18:01 by adamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_print_pointer(void *ptr)
