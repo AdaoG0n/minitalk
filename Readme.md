@@ -94,6 +94,7 @@ Develop two programs:
 | [Sending and Handling Signals in C (kill, signal, sigaction)](https://www.youtube.com/watch?v=83M5-NPDeWs)                                         |
 | [Short Introduction to Signals in C](https://youtu.be/5We_HtLlAbs)                                                                                 |
 | [Handling Signals](https://www.youtube.com/watch?v=jF-1eFhyz1U)                                                                                    |
+| [BIT_a_BIT viewer](https://github.com/AdaoG0n/Training_programs_C/tree/main/bit%20a%20bit)                                                         |
 
 
 ![](https://github.com/AdaoG0n/AdaoG0n/blob/main/assests/bar.png)
