@@ -6,7 +6,7 @@
 /*   By: adamarqu <adamarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 12:31:22 by adamarqu          #+#    #+#             */
-/*   Updated: 2025/03/18 10:23:42 by adamarqu         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:29:11 by adamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,3 @@ int	main(int argc, char **argv)
 		write(1, GREEN "Message sent!\n" RESET, 24);
 	return (0);
 }
-

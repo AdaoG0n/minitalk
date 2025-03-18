@@ -6,7 +6,7 @@
 /*   By: adamarqu <adamarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 10:47:34 by adamarqu          #+#    #+#             */
-/*   Updated: 2025/03/18 10:17:31 by adamarqu         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:28:55 by adamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	handler(int sig)
 {
 	static int	i;
 	static int	bit;
-	char	*c1;
+	char		*c1;
 
 	if (sig == SIGUSR1)
 		i |= (0x01 << bit);
@@ -52,7 +52,7 @@ void	handler(int sig)
 
 int	main(void)
 {
-	ft_putstr_fd(BLUE "╔═══════════════════════════════╗\n" RESET,1);
+	ft_putstr_fd(BLUE "╔═══════════════════════════════╗\n" RESET, 1);
 	ft_putstr_fd(BLUE "║"GREEN"	Server PID: " RESET, 1);
 	ft_putnbr(getpid());
 	ft_putstr_fd(BLUE "	║\n" RESET, 1);
