@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_number.c                                  :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adamarqu <adamarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:19:23 by adamarqu          #+#    #+#             */
-/*   Updated: 2025/01/07 12:18:04 by adamarqu         ###   ########.fr       */
+/*   Created: 2025/02/03 14:04:30 by adamarqu          #+#    #+#             */
+/*   Updated: 2025/03/18 10:11:52 by adamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef MINITALK_H
+# define MINITALK_H
 
-int	ft_print_number(int n)
-{
-	int				count;
-	unsigned int	num;
+# include <signal.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdbool.h>
 
-	count = 0;
-	if (n < 0)
-	{
-		count += ft_print_char('-');
-		num = (unsigned int)(-n);
-	}
-	else
-		num = (unsigned int)n;
-	if (num >= 10)
-		count += ft_print_number(num / 10);
-	count += ft_print_char((num % 10) + '0');
-	return (count);
-}
+
+int		ft_atoi(const char *nptr);
+char	*ft_strjoin(char *s1, char *s2);
+void	ft_putnbr(unsigned int pid);
+void	ft_putstr_fd(char *s, int fd);
+size_t	ft_strlen(const char *s);
+
+
+#endif
