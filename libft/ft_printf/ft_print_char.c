@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamarqu <adamarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adamarqu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 10:31:00 by adamarqu          #+#    #+#             */
-/*   Updated: 2025/03/19 11:56:23 by adamarqu         ###   ########.fr       */
+/*   Created: 2024/11/04 13:12:00 by adamarqu          #+#    #+#             */
+/*   Updated: 2024/11/04 13:13:57 by adamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-#ifndef MINITALK_H
-# define MINITALK_H
-
-# include "./libft/libft.h"
-# include "signal.h"
-# include "stdlib.h"
-# include "stdio.h"
-# include "unistd.h"
-# include "stdbool.h"
-
-#endif
+int	ft_print_char(char c)
+{
+	return (write(1, &c, 1));
+}

@@ -5,60 +5,66 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adamarqu <adamarqu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 10:47:34 by adamarqu          #+#    #+#             */
-/*   Updated: 2025/03/18 16:28:55 by adamarqu         ###   ########.fr       */
+/*   Created: 2025/03/19 10:32:42 by adamarqu          #+#    #+#             */
+/*   Updated: 2025/03/19 16:12:13 by adamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-#define RESET "\033[0m"
-#define GREEN "\033[1;32m"
-#define RED "\033[1;31m"
-#define BLUE "\033[1;34m"
-#define WHITE "\033[1;37m"
-#define BOLD "\033[1m"
+char	*g_str = NULL;
 
-char	*g_str;
-
-void	handler(int sig)
+void	append_char_to_str(char c)
 {
-	static int	i;
-	static int	bit;
-	char		*c1;
+	char	*temp;
+	char	*new_str;
 
-	if (sig == SIGUSR1)
-		i |= (0x01 << bit);
-	bit++;
-	if (bit == 8)
+	temp = (char *)malloc(sizeof(char) * 2);
+	if (!temp)
+		return ;
+	temp[0] = c;
+	temp[1] = '\0';
+	if (!g_str)
 	{
-		c1 = (char *)malloc(sizeof(char) * 2);
-		if (!c1)
-			return ;
-		c1[0] = (char)i;
-		c1[1] = '\0';
-		g_str = ft_strjoin(g_str, c1);
-		if (c1[0] == '\n')
-		{
-			ft_putstr_fd(g_str, 1);
-			free(g_str);
-			g_str = NULL;
-		}
-		bit = 0;
-		i = 0;
-		free(c1);
+		g_str = malloc(1);
+		g_str[0] = '\0';
+	}
+	new_str = ft_strjoin(g_str, temp);
+	free(g_str);
+	g_str = new_str;
+	free(temp);
+	if (c == '\n' || c == '\0')
+	{
+		write(1, g_str, ft_strlen(g_str));
+		free(g_str);
+		g_str = NULL;
 	}
 }
 
+void	process_signal( int sig)
+{
+	static int	i;
+	static int	bit;
+
+	if (sig == SIGUSR1)
+		i |= (1 << bit);
+	bit++;
+	if (bit == 8)
+	{
+		append_char_to_str((char)i);
+		bit = 0;
+		i = 0;
+	}
+}
+
+
 int	main(void)
 {
-	ft_putstr_fd(BLUE "╔═══════════════════════════════╗\n" RESET, 1);
-	ft_putstr_fd(BLUE "║"GREEN"	Server PID: " RESET, 1);
-	ft_putnbr(getpid());
-	ft_putstr_fd(BLUE "	║\n" RESET, 1);
-	ft_putstr_fd(BLUE "╚═══════════════════════════════╝\n" RESET, 1);
-	signal(SIGUSR1, handler);
-	signal(SIGUSR2, handler);
+	ft_putstr_fd("Server PID: ", 1);
+	ft_putnbr_fd(getpid(), 1);
+	write(1, "\n", 1);
+	signal(SIGUSR1, process_signal);
+	signal(SIGUSR2, process_signal);
 	while (1)
 		pause();
 }

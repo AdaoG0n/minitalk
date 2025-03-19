@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adamarqu <adamarqu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adamarqu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 10:31:00 by adamarqu          #+#    #+#             */
-/*   Updated: 2025/03/19 11:56:23 by adamarqu         ###   ########.fr       */
+/*   Created: 2024/11/04 13:34:55 by adamarqu          #+#    #+#             */
+/*   Updated: 2024/11/04 13:52:08 by adamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-#ifndef MINITALK_H
-# define MINITALK_H
+int	ft_print_unsigned(unsigned int n)
+{
+	int	count;
 
-# include "./libft/libft.h"
-# include "signal.h"
-# include "stdlib.h"
-# include "stdio.h"
-# include "unistd.h"
-# include "stdbool.h"
-
-#endif
+	count = 0;
+	if (n >= 10)
+		count += ft_print_unsigned(n / 10);
+	count += ft_print_char((n % 10) + '0');
+	return (count);
+}
